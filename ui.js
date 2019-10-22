@@ -1,5 +1,5 @@
 // Initialize weather object 
-const weather = new Weather('Chicago', '60659');
+const weather = new Weather('Chicago', 'us');
 
 weather.getWeather()
   .then(results => {

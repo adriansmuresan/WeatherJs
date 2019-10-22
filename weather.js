@@ -1,13 +1,13 @@
 class Weather {
-  constructor(city, zip) {
+  constructor(city, countryCode) {
     this.apiKey = 'e27f465a672182232f7bb237e4eb9ea4';
     this.city = city;
-    this.zip = zip;
+    this.countryCode = countryCode;
   }
 
   // Fetch weather from API --> I used (https://openweathermap.org/api)
   async getWeather() {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.zip}&APPID=${this.apiKey}`);
+    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.countryCode}&APPID=${this.apiKey}`);
   
     const responseData = await response.json();
   
@@ -15,8 +15,8 @@ class Weather {
   }
 
   // Change Location
-  changeLocation(city, zipCode) {
+  changeLocation(city, countryCode) {
     this.city = city;
-    this.zip = zip;
+    this.countryCode = countryCode;
   }
 }
