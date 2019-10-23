@@ -22,6 +22,9 @@ document.getElementById('w-change-btn').addEventListener('click', (e) => {
 
   weather.changeLocation(city, country);
 
+  // Set location in LocalStorage
+  storage.setLocationData(city, country);
+
   // Get and display weather
   getWeather();
 
